@@ -1,44 +1,40 @@
-import React, { useState, useEffect } from 'react'
-import {  useSelector } from 'react-redux';
-import "./dataFetching.css"
-const SearchBar = ({ setFilteredPosts }) => {
-    const post = useSelector(store => store.post);
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import "./dataFetching.css";
+import { setSearchQuery } from "./Buttons/Actions";
 
-    const [searchInput, setSearchInput] = useState("");
-    post.filter(post => post.id).map(post => post.id)
-    useEffect(() => {
-        setFilteredPosts(post);
-    }, [post, setFilteredPosts]);
+const SearchBar = () => {
+  const dispatch = useDispatch();
+  const [input, setInput] = useState("");
 
-    const handleSearch = () => {
-        const filtered = post.filter((post) =>
-            post.title.toLowerCase().includes(searchInput.toLowerCase())
-        );
-        setFilteredPosts(filtered);
-    };
+  const handleChange = (e) => {
+    setInput(e.target.value);
+  };
 
-    const handleChange = (e) => {
-        setSearchInput(e.target.value);
-        if (e.target.value === '') {
-            setFilteredPosts(post);
-        }
-    };
+  const handleSearch = () => {
+    dispatch(setSearchQuery(input));
+  };
 
+  return (
+    <div className="input-group searchBar shadow p-3 mb-5 bg-white">
+      <input
+        className="form-control rounded" // Opraveno z class na className
+        type="text"
+        aria-label="Search"
+        aria-describedby="search-addon"
+        placeholder="Search by title"
+        onChange={handleChange}
+        value={input} // Změněno na lokální stav input
+      />
+      <button
+        type="button"
+        className="btn btn-outline-primary" // Opraveno z class na className
+        onClick={handleSearch}
+      >
+        search
+      </button>
+    </div>
+  );
+};
 
-    return (
-        <div class="input-group searchBar shadow p-3 mb-5 bg-white">
-            <input
-                class="form-control rounded"
-                type="search" aria-label="Search" aria-describedby="search-addon"
-                placeholder="Title search here"
-                onChange={handleChange}
-                value={searchInput} />         <button type="button" class="btn btn-outline-primary" onClick={handleSearch}>search</button>
-        </div>
-
-
-
-
-    )
-}
-
-export default SearchBar
+export default SearchBar;

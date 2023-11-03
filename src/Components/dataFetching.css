@@ -1,93 +1,108 @@
 .post {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 50% !important;
-    padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 40% !important;
+  padding-top: 20px;
 }
 
-.card-header {
-    text-align: center;
-    margin: 5px 50px 0px;
+.cardHeader {
+  text-align: center;
 }
 
-.card-text {
-    text-align: center;
-    text-align:justify;
-    text-justify:inter-word;
-    margin: 20px 50px 0px;
-    font-family: "Times New Roman", Times, serif;}
-    .commentBody{
-        margin: 0px 20px 0px;
-
-        text-align:justify;
-    text-justify:inter-word;
-    font-family:sans-serif;
-    
-    
+.cardBody {
+  font-family: "Times New Roman", Times, serif;
+    text-align: justify;
+  text-justify: inter-word;
+  font-family: sans-serif;
+  margin: 5px 50px 0px;
+  font-size: 1rem;
 }
-
+.commentBody {
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: sans-serif;
+}
 
 .userComments {
-padding-bottom: 10px;}
-
-.commentEmail{
-    margin: 20px 0px 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.buttonComments {
+  color: #00bfff !important;
+}
+.commentEmail {
+  margin: 20px 0px 10px;
 }
 
-
-/* searchbar */
 .searchBar {
-    align-items: center;
-    width: 50%;
-    padding-top: 20px;
-
+  align-items: center;
+  width: 50%;
+  padding-top: 20px;
 }
 
 .searchData {
-    padding-bottom: 35px;
+  padding-bottom: 35px;
 }
 
 .likeDislike {
-    text-align: center;
-    padding: 5px;
-    padding-top: 20px;
+  text-align: center;
+  padding: 5px;
 }
 
 .dislike,
 .like {
-    padding: 5px;
-    width: 50px;
-    height: 40px;
-    padding: 5px;
-    border-radius: 25px;
-
-    display: inline-block;
-
+  width: 40px;
+  font-size: 10px;
+  padding: 5px;
+  border-radius: 15px;
+  display: inline-block;
 }
 
 .like {
-    border: 1px solid green;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(127, 255, 0, 0.5)
+  border: 1px solid green;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(127, 255, 0, 0.5);
 }
 
 .dislike {
-    margin-left: 20px;
-    border: 1px solid red;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(220, 20, 60, 0.5)
+  margin-left: 20px;
+  border: 1px solid red;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(220, 20, 60, 0.5);
 }
 
 .likesButtons {
-    text-align: end;
+  text-align: end;
 }
-
+.btnLike {
+  color: rgb(128, 255, 0) !important;
+  border: 1px solid #7fff00;
+}
+.btnDis {
+  color: #dc143c !important;
+  border: 1px solid #dc143c;
+}
 .btnLike,
 .btnDis {
-    margin-left: 10px;
-    width: 80px;
+  border-radius: 10px;
+  margin-left: 10px;
+  width: 80px;
+}
+.btnLike:hover {
+  background-color: #7fff00;
+  color: white !important;
+}
+.btnDis:hover {
+  background-color: #dc143c;
+  color: white !important;
+}
+
+@media only screen and (max-width: 985px) {
+  .post {
+    max-width: 80% !important;
+  }
 }
