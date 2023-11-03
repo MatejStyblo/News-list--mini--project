@@ -13,7 +13,7 @@
 
 .cardBody {
   font-family: "Times New Roman", Times, serif;
-    text-align: justify;
+  text-align: justify;
   text-justify: inter-word;
   font-family: sans-serif;
   margin: 5px 50px 0px;
@@ -99,6 +99,13 @@
 .btnDis:hover {
   background-color: #dc143c;
   color: white !important;
+}
+.btnLike:active {
+  color: blue !important;
+}
+.btnDis:active {
+  background-color: #dc143c;
+  color: blue !important;
 }
 
 @media only screen and (max-width: 985px) {

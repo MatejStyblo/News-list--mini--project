@@ -7,8 +7,6 @@ import {
   SET_SEARCH_QUERY,
   CLEAR_SEARCH_QUERY,
 } from "./Actions";
-const randomLike = Math.floor(Math.random() * 100);
-const randomDislike = Math.floor(Math.random() * 100);
 
 const initialState = {
   post: [],
@@ -18,7 +16,6 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  console.log(action);
   switch (action.type) {
     case SET_SEARCH_QUERY:
       return {

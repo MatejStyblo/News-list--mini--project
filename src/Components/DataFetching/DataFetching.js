@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./dataFetching.css";
 import axios from "axios";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import ButtonLikeDis from "./Buttons/ButtonLikeDis";
+import ButtonLikeDis from "../Buttons/ButtonLikeDis";
 import { useDispatch, useSelector } from "react-redux";
-import { loadPost, loadComments, loadUsers } from "./Buttons/Actions";
-import SearchBar from "./SearchBar";
+import { loadPost, loadComments, loadUsers } from "../Redux/Actions";
+import SearchBar from "../SearchBar/SearchBar";
 const DataFetching = () => {
   const dispatch = useDispatch();
   const post = useSelector((store) => store.post);
@@ -63,7 +63,7 @@ const DataFetching = () => {
             {users
               .filter((user) => user.id === postItem.userId)
               .map((user) => (
-                <Row className="userComments">
+                <Row className="userComments"  key={postItem.id}>
                   <Col className="userName font-weight-bold">{user.name}</Col>
                   <Col>
                     <a

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import "./dataFetching.css";
-import { setSearchQuery } from "./Buttons/Actions";
+import { useDispatch } from "react-redux";
+import "../DataFetching/dataFetching.css";
+import { setSearchQuery } from "../Redux/Actions";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
@@ -18,17 +18,18 @@ const SearchBar = () => {
   return (
     <div className="input-group searchBar shadow p-3 mb-5 bg-white">
       <input
-        className="form-control rounded" // Opraveno z class na className
+      id="myinput"
+        className="form-control rounded"
         type="text"
         aria-label="Search"
         aria-describedby="search-addon"
         placeholder="Search by title"
         onChange={handleChange}
-        value={input} // Změněno na lokální stav input
+        value={input} 
       />
       <button
         type="button"
-        className="btn btn-outline-primary" // Opraveno z class na className
+        className="btn btn-outline-primary" 
         onClick={handleSearch}
       >
         search
