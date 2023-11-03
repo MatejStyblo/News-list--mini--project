@@ -1,9 +1,9 @@
-import { LIKE, DISLIKE, LOADPOST,COMMENTS,USERS } from './Actions';
+import { LIKE, DISLIKE, LOADPOST, COMMENTS, USERS } from './Actions';
 
 const initialState = {
   post: [],
   comments: [],
-  users:[]
+  users: []
 
 };
 
@@ -12,17 +12,17 @@ const reducer = (state = initialState, action) => {
   console.log(action);
   switch (action.type) {
     case COMMENTS:
-  return {
-    ...state,
-    comments: action.payload.comments
-  };
-  case USERS:
-    return{
+      return {
+        ...state,
+        comments: action.payload.comments
+      };
+    case USERS:
+      return {
 
-      ...state,
-      users: action.payload.users
-    }
-      case LOADPOST:
+        ...state,
+        users: action.payload.users
+      }
+    case LOADPOST:
       const updatedPosts = action.payload.post.map(post => ({
         ...post,
         like: 15,
@@ -31,7 +31,7 @@ const reducer = (state = initialState, action) => {
       return { ...state, post: updatedPosts }
     case LIKE:
       const currentPostIndex = state.post.findIndex(post => post.id === action.payload.id)
-      
+
       const newsPost = [...state.post]
       const currentLike = Number(newsPost[currentPostIndex].like) || 0;
       newsPost[currentPostIndex] = {

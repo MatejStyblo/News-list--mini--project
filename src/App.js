@@ -1,11 +1,11 @@
 import './App.css';
-import NewsList from "./Components/NewsList"
+import DataFetching from './Components/DataFetching'
 
 
 function App() {
   return (
     <div>
-<NewsList/>
+<DataFetching/>
     </div>
 
 

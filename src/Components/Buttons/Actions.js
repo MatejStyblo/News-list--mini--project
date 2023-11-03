@@ -12,11 +12,11 @@ export function dislikeAction(id) {
 }
 
 export function loadPost(post) {
-  return {type:LOADPOST,payload:{post} }
+  return { type: LOADPOST, payload: { post } }
 }
 export function loadComments(comments) {
-  return { type: COMMENTS, payload: {comments} }
+  return { type: COMMENTS, payload: { comments } }
 }
 export function loadUsers(users) {
-  return { type: USERS, payload: {users} }
+  return { type: USERS, payload: { users } }
 }
