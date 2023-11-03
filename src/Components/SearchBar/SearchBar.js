@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import "../DataFetching/dataFetching.css";
-import { setSearchQuery } from "../Redux/Actions";
+import { setSearchQuery } from "../../Redux/Actions";
 
 const SearchBar = () => {
   const dispatch = useDispatch();

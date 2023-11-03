@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ButtonLikeDis from "../Buttons/ButtonLikeDis";
 import { useDispatch, useSelector } from "react-redux";
-import { loadPost, loadComments, loadUsers } from "../Redux/Actions";
+import { loadPost, loadComments, loadUsers } from "../../Redux/Actions";
 import SearchBar from "../SearchBar/SearchBar";
 const DataFetching = () => {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { likeAction, dislikeAction } from "../Redux/Actions";
+import { likeAction, dislikeAction } from "../../Redux/Actions";
 
 const ButtonLikeDis = ({ id }) => {
   const dispatch = useDispatch();
